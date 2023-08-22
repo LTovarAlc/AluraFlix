@@ -1,0 +1,18 @@
+.btn{
+    height: 60px;
+    width: 130px;
+    color: #000000;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    background-color: #75CC20;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 1px 5px #487c13b3;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #94ff29;
+    box-shadow: 0px 10px 15px #487c13b3;
+}

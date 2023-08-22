@@ -1,0 +1,11 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
+    background-color: #292929;
+}
+
+.logo{
+    filter: drop-shadow(0px 8px 4px #487c13);
+}
