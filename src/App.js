@@ -1,8 +1,10 @@
-import './reset.css'
+import './reset.css';
+import './scrollbar.css';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Form } from 'react-router-dom';
 import Home from './pages/Home';
 import FormPage from './pages/FormPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return(
@@ -11,6 +13,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/AddVideo' element={<FormPage/>}/>
       </Routes>
+      <Footer/>
     </Router>
   )
 }

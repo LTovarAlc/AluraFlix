@@ -1,8 +1,11 @@
+import Header from "../components/Header/Header"
+import Formulario from "../components/Formulario/Formulario"
 
 
 const FormPage = () => {
     return <>
-    <h1>HOLA</h1>
+    <Header/>
+    <Formulario/>
     </>
 }
 
