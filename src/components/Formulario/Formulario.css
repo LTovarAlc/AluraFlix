@@ -35,6 +35,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 20px;
 }
 
 .form input, select {
@@ -45,19 +46,117 @@
     padding-left: 10px;
     margin:10px 0px 10px 0px ;
     border: none;
+    transition: .5s;
 }
 
 input::placeholder{
-    color: #487c13b3;
+    color: #75CC20;
 }
 
 .form input:focus{
     border: 2px solid #75CC20;
     outline: none;
+    color: #75CC20;
 }
 
 .or{
     color: #75CC20;
     font-size: 22px;
     font-weight: 500;
+}
+
+/* Oculta el input de tipo file */
+input[type="file"] {
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* Estilos para el botón personalizado */
+.custom-file-upload {
+    display: inline-block;
+    width: 450px; /* Ancho igual al de los otros elementos */
+    height: 50px; /* Mismo alto que los otros elementos */
+    padding-left: 10px;
+    background-color: #75CC20;
+    color: #000000;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    margin: 10px 0;
+    text-align: center;
+    line-height: 30px; /* Ajusta según la altura del botón */
+}
+
+/* Estilos para el icono dentro del botón */
+.custom-file-upload i {
+  margin-right: 5px;
+}
+
+i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+i img{
+    height: 25px;
+}
+
+.selected-file{
+    color: #75CC20;
+}
+
+/* Formulario.css */
+select {
+  width: 450px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #1d1d1d;
+  border: none;
+  color: #75CC20;
+  outline: none;
+}
+
+select:focus {
+  border-color: 2px solid #75CC20;
+}
+
+.error{
+    color: #75CC20;
+    margin: 10px 0px 10px 0px;
+}
+
+.btn__publicar{
+    margin-top: 10px;
+    height: 50px;
+    width: 300px;
+    color: #000000;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    background-color: #75CC20;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 1px 5px #487c13b3;
+    cursor: pointer;
+}
+
+.btn__publicar:hover{
+    background-color: #94ff29;
+    box-shadow: 0px 5px 10px #487c13b3;
+}
+
+/* Cambiar el color del texto al obtener el foco */
+.input-focus {
+    color: #487c13;
+}
+
+/* Cambiar el color del texto al perder el foco */
+.input-blur {
+    color: #487c13; /* Cambia esto al color que desees */
 }
