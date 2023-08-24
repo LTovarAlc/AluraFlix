@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import CustomSelect from '../select';
 import './Formulario.css';
-import Boton from '../Boton/Boton';
 
-const Formulario = () => {
+const Formulario = ({setVideoData: updateVideoData}) => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [title, setTitle] = useState('');
     const [url, setUrl] = useState('');
@@ -11,6 +10,7 @@ const Formulario = () => {
     const [titleError, setTitleError] = useState('');
     const [fileError, setFileError] = useState('');
     const [urlError, setUrlError] = useState('');
+    const [videoData, setVideoData] = useState([]);
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -25,14 +25,42 @@ const Formulario = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        let formData = {
-            title,
-            url,
-            selectedCategory,
-            selectedFile
-        };
+        let isFormValid = true;
 
-        console.log('Form data:', formData);
+        if (title.trim() === '') {
+            setTitleError('El título es requerido');
+            isFormValid = false;
+        } else {
+            setTitleError('');
+        }
+
+        if (!selectedFile && url.trim() === '') {
+            setFileError('Debe subir un archivo o proporcionar una URL');
+            setUrlError('Debe subir un archivo o proporcionar una URL');
+            isFormValid = false;
+        } else {
+            setFileError('');
+            setUrlError('');
+        }
+
+        if (isFormValid) {
+            const newVideoData = {
+                id: Date.now(),
+                title,
+                selectedCategory,
+                selectedFile,
+                url: selectedFile ? '': url
+            };
+
+            console.log('New video data:', newVideoData)
+
+            updateVideoData(prevVideoData => [...prevVideoData, newVideoData]);
+
+            setTitle('');
+            setUrl('');
+            setSelectedCategory('');
+            setSelectedFile(null);
+        }
     };
 
     const categoryOptions = [
@@ -58,7 +86,7 @@ const Formulario = () => {
                         onChange={(e) => setTitle(e.target.value)}
                         onFocus={(e) => e.target.classList.add('input-focus')}
                         onBlur={(e) => e.target.classList.remove('input-focus')}
-                        className='input-blur' 
+                        className='input-blur'
                     />
                     {titleError && <span className='error'>{titleError}</span>}
 
@@ -90,8 +118,8 @@ const Formulario = () => {
                     {fileError && <span className='error'>{fileError}</span>}
 
                     <CustomSelect
-                          value={selectedCategory}
-                          onChange={handleCategoryChange}
+                        value={selectedCategory}
+                        onChange={handleCategoryChange}
                     />
                     {selectedCategory === '' && <span className='error'>Debe seleccionar una categoría.</span>}
 

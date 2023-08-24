@@ -17,7 +17,7 @@ const categorias = [
     },
     { 
     name: 'Deportes', 
-    color: 'orange' 
+    color: 'yellow' 
     }
 ]
 

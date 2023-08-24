@@ -1,11 +1,12 @@
+import React from "react"
 import Header from "../components/Header/Header"
 import Content from "../components/content/Content"
 
 
-const Home = () => {
+const Home = ({videoData}) => {
     return <>
         <Header/>
-        <Content/>
+        <Content videoData={videoData}/>
     </>
 }
 

@@ -1,10 +1,13 @@
+import React from "react"
 import "./Card.css"
 
-const Card = () => {
+const Card = ( {title, source} ) => {
     return (
         <div className="card">
-            <img src="/img/exampleVideo.jpeg" alt="" className="mini"/>
-            <h3 className="card__title">Titulo del video</h3>
+            <video controls className="video">
+                <source src={source} type="video/mp4" />
+            </video>
+            <h3 className="card__title">{title}</h3>
         </div>
     )
 }
