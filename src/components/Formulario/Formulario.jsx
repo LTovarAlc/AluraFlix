@@ -25,33 +25,14 @@ const Formulario = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        // Title validation
-        if (title.trim() === '') {
-            setTitleError('El título es requerido.');
-        } else if (title.length > 200) {
-            setTitleError('El título no puede ser más largo de 200 caracteres.');
-        } else {
-            setTitleError('');
-        }
+        let formData = {
+            title,
+            url,
+            selectedCategory,
+            selectedFile
+        };
 
-        // URL and File validation
-        if (url.trim() === '' && !selectedFile) {
-            setUrlError('Debe ingresar una URL o subir un archivo.');
-            setFileError('');
-        } else {
-            setUrlError('');
-        }
-
-        // Category validation
-        if (selectedCategory === '') {
-            // You can set an error message for the category if needed
-        }
-
-        // If all validations pass, you can proceed with form submission
-        if (!titleError && !urlError && selectedCategory !== '' && (url.trim() !== '' || selectedFile)) {
-            // Perform form submission logic here
-            console.log('Form submitted successfully');
-        }
+        console.log('Form data:', formData);
     };
 
     const categoryOptions = [
@@ -109,9 +90,8 @@ const Formulario = () => {
                     {fileError && <span className='error'>{fileError}</span>}
 
                     <CustomSelect
-                        options={categoryOptions}
-                        value={selectedCategory}
-                        onChange={handleCategoryChange}
+                          value={selectedCategory}
+                          onChange={handleCategoryChange}
                     />
                     {selectedCategory === '' && <span className='error'>Debe seleccionar una categoría.</span>}
 
@@ -123,6 +103,3 @@ const Formulario = () => {
 }
 
 export default Formulario;
-
-
-//HACER QUE LOS DATOS DEL FORMULARIO SE GUARDEN EN UN OBJETO PARA HACER LA CARD DE VIDEO.

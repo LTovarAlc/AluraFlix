@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const CustomSelect = () => {
-  const [selectedOption, setSelectedOption] = useState('');
+const CustomSelect = ({ value, onChange }) => {
 
   const handleOptionChange = event => {
-    setSelectedOption(event.target.value);
-  };
+    const selectedValue = event.target.value;
+    onChange(selectedValue)
+  }
+
 
   return (
     <div className="custom-select">
       <div className="select-wrapper">
-        <select value={selectedOption} onChange={handleOptionChange}>
+        <select value={value} onChange={handleOptionChange}>
           <option value="" disabled>
             Selecciona una categoría
           </option>
