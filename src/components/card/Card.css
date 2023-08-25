@@ -6,7 +6,7 @@
     cursor: pointer;
 }
 
-.mini{
+.video{
     border-radius: 10px 10px 0px 0px;
     margin-bottom: 10px;
 }
@@ -21,11 +21,4 @@
 
 .card:hover{
     scale: 1.04;
-}
-
-.icon__card{
-    position: absolute;
-    top: 65px;
-    right: 130px;
-    height: 50px; 
 }

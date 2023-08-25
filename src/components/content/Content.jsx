@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import Card from '../card/Card';
 import categorias from '../categorias';
 import './Content.css';
@@ -30,7 +31,8 @@ const Content = ({ videoData }) => {
                                         <Card
                                             key={video.id}
                                             title={video.title}
-                                            source={video.url || (video.selectedFile && URL.createObjectURL(video.selectedFile))}
+                                            url ={video.url}
+                                            file={video.file}
                                         />
                                     ))}
                         </div>

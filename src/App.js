@@ -1,3 +1,5 @@
+import React from 'react';
+import { useState } from 'react';
 import './reset.css';
 import './scrollbar.css';
 import './App.css';
@@ -7,10 +9,15 @@ import FormPage from './pages/FormPage';
 import Footer from './components/Footer/Footer';
 
 function App() {
+
+  const [videoData, setVideoData] = useState([])
+
+  console.log(videoData)
+
   return(
     <Router>
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<Home videoData={videoData}/>}/>
         <Route path='/AddVideo' element={<FormPage/>}/>
       </Routes>
       <Footer/>

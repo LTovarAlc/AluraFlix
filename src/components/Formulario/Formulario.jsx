@@ -1,46 +1,46 @@
-import React, { useState } from 'react';
-import CustomSelect from '../select';
-import './Formulario.css';
+import React, { useState } from 'react'
+import CustomSelect from '../select'
+import './Formulario.css'
 
 const Formulario = ({setVideoData: updateVideoData}) => {
-    const [selectedFile, setSelectedFile] = useState(null);
-    const [title, setTitle] = useState('');
-    const [url, setUrl] = useState('');
-    const [selectedCategory, setSelectedCategory] = useState('');
-    const [titleError, setTitleError] = useState('');
-    const [fileError, setFileError] = useState('');
-    const [urlError, setUrlError] = useState('');
-    const [videoData, setVideoData] = useState([]);
+    const [selectedFile, setSelectedFile] = useState(null)
+    const [title, setTitle] = useState('')
+    const [url, setUrl] = useState('')
+    const [selectedCategory, setSelectedCategory] = useState('')
+    const [titleError, setTitleError] = useState('')
+    const [fileError, setFileError] = useState('')
+    const [urlError, setUrlError] = useState('')
+    const [videoData, setVideoData] = useState([])
 
     const handleFileChange = (event) => {
-        const file = event.target.files[0];
-        setSelectedFile(file);
-        setFileError('');
-    };
+        const file = event.target.files[0]
+        setSelectedFile(file)
+        setFileError('')
+    }
 
     const handleCategoryChange = (selectedCategory) => {
-        setSelectedCategory(selectedCategory);
+        setSelectedCategory(selectedCategory)
     };
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault()
 
-        let isFormValid = true;
+        let isFormValid = true
 
         if (title.trim() === '') {
-            setTitleError('El título es requerido');
-            isFormValid = false;
+            setTitleError('El título es requerido')
+            isFormValid = false
         } else {
-            setTitleError('');
+            setTitleError('')
         }
 
         if (!selectedFile && url.trim() === '') {
-            setFileError('Debe subir un archivo o proporcionar una URL');
-            setUrlError('Debe subir un archivo o proporcionar una URL');
+            setFileError('Debe subir un archivo o proporcionar una URL')
+            setUrlError('Debe subir un archivo o proporcionar una URL')
             isFormValid = false;
         } else {
-            setFileError('');
-            setUrlError('');
+            setFileError('')
+            setUrlError('')
         }
 
         if (isFormValid) {
@@ -48,28 +48,24 @@ const Formulario = ({setVideoData: updateVideoData}) => {
                 id: Date.now(),
                 title,
                 selectedCategory,
-                selectedFile,
-                url: selectedFile ? '': url
-            };
+                url : selectedFile ? null : url,
+                file: selectedFile ? URL.createObjectURL(selectedFile) : null
+            }
 
             console.log('New video data:', newVideoData)
 
-            updateVideoData(prevVideoData => [...prevVideoData, newVideoData]);
+            updateVideoData(prevVideoData => {
+                const updatedVideoData = [...prevVideoData, newVideoData]
+                console.log('Updated videoData:', updatedVideoData)
+                return updatedVideoData
+            });            
 
-            setTitle('');
-            setUrl('');
-            setSelectedCategory('');
-            setSelectedFile(null);
+            setTitle('')
+            setUrl('')
+            setSelectedCategory('')
+            setSelectedFile(null)
         }
     };
-
-    const categoryOptions = [
-        'Entretenimiento',
-        'Música',
-        'Cocina',
-        'Educación',
-        'Deportes',
-    ];
 
     return (
         <section className='section__form'>
