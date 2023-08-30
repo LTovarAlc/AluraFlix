@@ -18,6 +18,10 @@ const categorias = [
     { 
     name: 'Deportes', 
     color: 'yellow' 
+    },
+    {
+    name: 'Otros',
+    color: 'white'
     }
 ]
 
