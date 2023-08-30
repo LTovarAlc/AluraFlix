@@ -10,14 +10,13 @@ import Footer from './components/Footer/Footer';
 
 function App() {
 
-  const [videoData, setVideoData] = useState([])
+  // const [] = useState([])
 
-  console.log(videoData)
 
   return(
     <Router>
       <Routes>
-        <Route path='/' element={<Home videoData={videoData}/>}/>
+        <Route path='/' element={<Home/>}/>
         <Route path='/AddVideo' element={<FormPage/>}/>
       </Routes>
       <Footer/>

@@ -1,10 +1,8 @@
 import React from 'react';
-import { useEffect } from 'react';
-import Card from '../card/Card';
 import categorias from '../categorias';
 import './Content.css';
 
-const Content = ({ videoData }) => {
+const Content = () => {
     return (
         <section className="content">
             <div className="content__title">
@@ -17,24 +15,14 @@ const Content = ({ videoData }) => {
                             className="category__name"
                             style={{
                                 color: category.color,
-                                borderLeft: `4px solid ${category.color}`,
-                                borderBottom: `8px solid ${category.color}`,
+                                borderLeft: `10px solid ${category.color}`,
+                                borderBottom: `5px solid ${category.color}`,
                             }}
                         >
                             {category.name}
                         </h2>
                         <div className="category__cards">
-                            {videoData &&
-                                videoData
-                                    .filter(video => video.selectedCategory === category.name)
-                                    .map(video => (
-                                        <Card
-                                            key={video.id}
-                                            title={video.title}
-                                            url ={video.url}
-                                            file={video.file}
-                                        />
-                                    ))}
+                            {/* aqui va las cartas */}
                         </div>
                     </div>
                 ))}
