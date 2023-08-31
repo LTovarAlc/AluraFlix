@@ -9,14 +9,15 @@ const Formulario = () => {
   const [tituloError, setTituloError] = useState("");
   const [urlError, setUrlError] = useState("");
   const [categoriaError, setCategoriaError] = useState("");
+  const [formularioEnviado, setFormularioEnviado] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Validaciones
+    // Valids
     let hasErrors = false;
 
-    if (titulo.length > 2) {
+    if (titulo.length > 200) {
       setTituloError("El título no puede exceder los 200 caracteres");
       hasErrors = true;
     } else {
@@ -38,9 +39,14 @@ const Formulario = () => {
     }
 
     if (!hasErrors) {
-      console.log("Título:", titulo);
-      console.log("URL del video:", urlVideo);
-      console.log("Categoría:", categorySelected);
+      const formData = {
+        Titulo: titulo,
+        Video: urlVideo,
+        Categoria: categorySelected,
+      };
+
+      console.log("Datos del formulario:", formData);
+      setFormularioEnviado(true);
     }
   };
 
