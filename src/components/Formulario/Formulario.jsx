@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import "./Formulario.css";
 import categorias from "../categorias";
+import { v4 as uuidv4 } from "uuid";
+import ReactPlayer from "react-player";
+import { Navigate, useNavigate } from "react-router-dom";
 
-const Formulario = () => {
+const Formulario = ({ setVideoData }) => {
+  const navigate = useNavigate();
   const [titulo, setTitulo] = useState("");
   const [urlVideo, setUrlVideo] = useState("");
   const [categorySelected, setCategorySelected] = useState("");
@@ -39,14 +43,20 @@ const Formulario = () => {
     }
 
     if (!hasErrors) {
-      const formData = {
+      const id = uuidv4();
+
+      const videoData = {
+        id: id,
         Titulo: titulo,
         Video: urlVideo,
         Categoria: categorySelected,
       };
 
-      console.log("Datos del formulario:", formData);
+      setVideoData(videoData);
+      console.log('videoData: ',videoData);
       setFormularioEnviado(true);
+
+      navigate("/");
     }
   };
 
@@ -87,6 +97,16 @@ const Formulario = () => {
             Publicar
           </button>
         </form>
+        {/* {formularioEnviado && (
+          <div className="card">
+            <ReactPlayer
+            url={urlVideo}
+            width="560"
+            height="315"
+            controls={true}
+            />
+          </div>
+        )} */}
       </div>
     </section>
   );

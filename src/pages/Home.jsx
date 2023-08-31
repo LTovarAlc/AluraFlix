@@ -1,13 +1,18 @@
-import React from "react"
-import Header from "../components/Header/Header"
-import Content from "../components/content/Content"
+import React, { useState, useEffect } from "react";
+import Header from "../components/Header/Header";
+import Content from "../components/content/Content";
+import Formulario from '../components/Formulario/Formulario';
+import FormPage from './FormPage';
 
+const Home = () => {
+    const [videoData, setVideoData] = useState(null);
 
-const Home = ({}) => {
-    return <>
-        <Header/>
-        <Content/>
-    </>
-}
+    return (
+        <>
+            <Header />
+            <Content videoData={videoData} />
+        </>
+    );
+};
 
-export default Home
+export default Home;

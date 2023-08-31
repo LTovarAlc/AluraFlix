@@ -1,8 +1,9 @@
 import React from 'react';
 import categorias from '../categorias';
 import './Content.css';
+import ReactPlayer from 'react-player';
 
-const Content = () => {
+const Content = ({videoData}) => {
     return (
         <section className="content">
             <div className="content__title">
@@ -22,7 +23,12 @@ const Content = () => {
                             {category.name}
                         </h2>
                         <div className="category__cards">
-                            {/* aqui va las cartas */}
+                            {videoData && videoData.Categoria === category.name && (
+                                <div className='video-card'>
+                                    <ReactPlayer url={videoData.Video} controls={true} />
+                                    <h3>{videoData.Titulo}</h3>
+                                </div>
+                            )}
                         </div>
                     </div>
                 ))}
