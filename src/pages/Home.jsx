@@ -3,23 +3,19 @@ import Header from "../components/Header/Header";
 import Content from "../components/content/Content";
 
 const Home = ({ videoData }) => {
-
-    //estado local para almacenar los datos recuperados del localStorage
-    const [storageVideoData, setStorageVideoData] = useState(null)
+  //estado local para almacenar los datos recuperados del localStorage
+  const [storedVideos, setStoredVideos] = useState([]);
 
   useEffect(() => {
-    //Recuperar datos al reiniciar pagina
-    const storedData = localStorage.getItem("videoData");
-    if(storedData){
-        const parsedData = JSON.parse(storedData)
-        setStorageVideoData(parsedData)
-    }
+    //Recuperar la lista de videos del localStorage al cargar la página
+    const storedVideosData = JSON.parse(localStorage.getItem("videos")) || [];
+    setStoredVideos(storedVideosData);
   }, []);
 
   return (
     <>
       <Header />
-      <Content videoData={storageVideoData || videoData} />
+      <Content videoData={storedVideos} />
     </>
   );
 };

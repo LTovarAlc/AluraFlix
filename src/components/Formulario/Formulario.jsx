@@ -51,8 +51,17 @@ const Formulario = ({ setVideoData }) => {
         Categoria: categorySelected,
       };
 
-      //Guardar en local storage el video publicado
-      localStorage.setItem("videoData", JSON.stringify(videoData));
+       // Recuperar la lista actual de videos del localStorage o crear una lista vacía si no existe
+       const storedVideos = JSON.parse(localStorage.getItem('videos')) || [];
+
+       // Agregar el nuevo video a la lista
+       storedVideos.push(videoData);
+ 
+       // Guardar la lista completa de videos en el localStorage
+       localStorage.setItem('videos', JSON.stringify(storedVideos));
+ 
+       // Actualizar el estado local si es necesario
+       setVideoData(videoData);
 
       setVideoData(videoData);
       setFormularioEnviado(true);

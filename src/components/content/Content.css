@@ -45,3 +45,23 @@
     margin-top: 50px;
     padding: 0px 15px;
 }
+
+.title__video{
+    color: #ffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    padding: 15px 0px 15px 10px;
+}
+
+.video-card{
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #292929;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    height: 270px;
+}
+
+.video-card:hover{
+    scale: 1.01;
+}
