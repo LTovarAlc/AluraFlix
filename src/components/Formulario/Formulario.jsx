@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Formulario.css";
 import categorias from "../categorias";
 import { v4 as uuidv4 } from "uuid";
-import ReactPlayer from "react-player";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Formulario = ({ setVideoData }) => {
@@ -52,8 +51,10 @@ const Formulario = ({ setVideoData }) => {
         Categoria: categorySelected,
       };
 
+      //Guardar en local storage el video publicado
+      localStorage.setItem("videoData", JSON.stringify(videoData));
+
       setVideoData(videoData);
-      console.log('videoData: ',videoData);
       setFormularioEnviado(true);
 
       navigate("/");
