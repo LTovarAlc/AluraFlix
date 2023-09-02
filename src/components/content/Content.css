@@ -22,10 +22,12 @@
 
 .content__category{
     padding: 32px 64px;
+    width: 100%;
 }
 
 .category{
     padding: 20px;
+    width: 100%;
 }
 
 .category__name{
@@ -44,6 +46,7 @@
     justify-content: space-around;
     margin-top: 50px;
     padding: 0px 15px;
+    width: 100%;
 }
 
 .title__video{
@@ -53,15 +56,34 @@
     padding: 15px 0px 15px 10px;
 }
 
+.title__video:hover{
+    text-decoration: underline;
+}
+
 .video-card{
-    overflow: hidden;
+    position: relative;
     border-radius: 8px;
     background-color: #292929;
     cursor: pointer;
     transition: 0.2s ease-in;
-    height: 270px;
+    width: 325px;
 }
 
 .video-card:hover{
     scale: 1.01;
+}
+
+
+.delete{
+    height: 30px;
+    width: auto;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.delete:hover{
+    filter: brightness(1.5);
 }

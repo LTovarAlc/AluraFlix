@@ -3,7 +3,7 @@ import categorias from "../categorias";
 import "./Content.css";
 import ReactPlayer from "react-player";
 
-const Content = ({ videoData }) => {
+const Content = ({ videoData, onDelete }) => {
   return (
     <section className="content">
       <div className="content__title">
@@ -27,11 +27,17 @@ const Content = ({ videoData }) => {
                 (video) =>
                   video.Categoria === category.name && (
                     <div key={video.id} className="video-card">
+                      <img
+                        src="/img/borrar.png"
+                        alt="Delete"
+                        className="delete"
+                        onClick={() => onDelete(video.id)}
+                      />
                       <ReactPlayer
                         url={video.Video}
                         controls={true}
-                        width="375px"
-                        height="200px"
+                        width="325px"
+                        height="175px"
                       />
                       <h3 className="title__video">{video.Titulo}</h3>
                     </div>

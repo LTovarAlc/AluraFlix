@@ -41,6 +41,14 @@ const Formulario = ({ setVideoData }) => {
       setCategoriaError("");
     }
 
+    const storedVideos = JSON.parse(localStorage.getItem("videos")) || [];
+    const urlExists = storedVideos.some((video) => video.Video === urlVideo);
+
+    if (urlExists) {
+      setUrlError("Esa URL ya existe en esta página");
+      hasErrors = true;
+    }
+
     if (!hasErrors) {
       const id = uuidv4();
 
