@@ -3,7 +3,7 @@ import categorias from "../categorias";
 import "./Content.css";
 import CategorySlider from "../Slider";
 
-const Content = ({ videoData, onDelete}) => {
+const Content = ({ videoData, onDelete }) => {
   return (
     <section className="content">
       <div className="content__title">
@@ -22,9 +22,11 @@ const Content = ({ videoData, onDelete}) => {
             >
               {category.name}
             </h2>
-            <CategorySlider 
-                videos={videoData.filter((video)=> video.Categoria === category.name)} //los filtra por categorias
-                onDelete={onDelete} //icono para borrar videos
+            <CategorySlider
+              videos={videoData.filter(
+                (video) => video.Categoria === category.name
+              )}
+              onDelete={onDelete}
             />
           </div>
         ))}
