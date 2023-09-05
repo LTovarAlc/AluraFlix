@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home videoData={videoData}/>}/>
         <Route path='/AddVideo' element={<FormPage setVideoData={setVideoData}/>}/>
-        <Route path='/PlayVideo' element={<PlayVideo />} />
+        <Route path='/VideoPlay' element={<PlayVideo />} />
       </Routes>
       <Footer/>
     </Router>
