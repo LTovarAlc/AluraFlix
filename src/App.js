@@ -6,6 +6,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Form } from 'react-router-dom';
 import Home from './pages/Home';
 import FormPage from './pages/FormPage';
+import PlayVideo from './pages/PlayVideo'
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home videoData={videoData}/>}/>
         <Route path='/AddVideo' element={<FormPage setVideoData={setVideoData}/>}/>
+        <Route path='/PlayVideo' element={<PlayVideo />} />
       </Routes>
       <Footer/>
     </Router>

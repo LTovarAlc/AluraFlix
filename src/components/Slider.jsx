@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,7 +20,8 @@ const CategorySlider = ({ videos, onDelete }) => {
     <div className="category-slider">
       <Slider {...sliderSettings}>
         {videos.map((video) => (
-          <div key={video.id} className="video__card">
+          <Link to={"/VideoPlay"}>
+              <div key={video.id} className="video__card">
             <img
               src="/img/borrar.png"
               alt="Delete"
@@ -35,6 +37,7 @@ const CategorySlider = ({ videos, onDelete }) => {
               <h3 className="title__video">{video.Titulo}</h3>
             </div>
           </div>
+          </Link>
         ))}
       </Slider>
     </div>
