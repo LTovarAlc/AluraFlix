@@ -57,7 +57,7 @@ const Formulario = ({ setVideoData }) => {
         const videoThumbnail = response.data.items[0].snippet.thumbnails.medium.url;
         console.log("Video Thumbnail:", videoThumbnail);
 
-
+        // Generar un id
         const id = uuidv4();
 
         const videoData = {
