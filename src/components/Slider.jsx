@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./slider/Slider.css";
 import "./content/Content.css";
 
-const CategorySlider = ({ videos, onDelete }) => {
+const CategorySlider = ({ videos, onDelete, videoData }) => {
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -21,7 +21,7 @@ const CategorySlider = ({ videos, onDelete }) => {
       <Slider {...sliderSettings}>
         {videos.map((video) => (
           <Link to={"/VideoPlay"} key={video.id}>
-            <div key={video.id} className="video__card">
+            <div className="video__card">
               <img
                 src="/img/borrar.png"
                 alt="Delete"

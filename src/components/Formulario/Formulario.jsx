@@ -68,6 +68,8 @@ const Formulario = ({ setVideoData }) => {
           Miniatura: videoThumbnail, // Almacenar la miniatura del video
         };
 
+        console.log(videoData)
+
         // Recuperar la lista actual de videos del localStorage o crear una lista vacía si no existe
         const storedVideos = JSON.parse(localStorage.getItem("videos")) || [];
 
@@ -126,16 +128,6 @@ const Formulario = ({ setVideoData }) => {
             Publicar
           </button>
         </form>
-        {/* {formularioEnviado && (
-          <div className="card">
-            <ReactPlayer
-            url={urlVideo}
-            width="560"
-            height="315"
-            controls={true}
-            />
-          </div>
-        )} */}
       </div>
     </section>
   );

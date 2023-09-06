@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-// Reemplaza 'TU_CLAVE_DE_API' con la clave de la API de YouTube que proporcionaste
 const API_KEY = 'AIzaSyCQ4mACoTHcMp3kGgxniRq7eEA9CL5JSJM';
 
 // Función para buscar videos en YouTube
