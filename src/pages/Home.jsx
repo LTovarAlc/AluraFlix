@@ -13,11 +13,11 @@ const Home = ({ videoData }) => {
   }, []);
 
   const handleDelete = (videoId) => {
-    const updateVideos = storedVideos.filter((video) => video.id !== videoId )
+    const updateVideos = storedVideos.filter((video) => video.id !== videoId);
 
-    setStoredVideos(updateVideos)
-    localStorage.setItem("videos", JSON.stringify(updateVideos))
-  }
+    setStoredVideos(updateVideos);
+    localStorage.setItem("videos", JSON.stringify(updateVideos));
+  };
 
   return (
     <>

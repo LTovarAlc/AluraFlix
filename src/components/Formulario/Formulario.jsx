@@ -63,7 +63,7 @@ const Formulario = ({ setVideoData }) => {
         const videoData = {
           id: id,
           Titulo: titulo,
-          VideoId: videoId, // Almacenar el ID del video en lugar de la URL completa
+          VideoUrl: urlVideo,
           Categoria: categorySelected,
           Miniatura: videoThumbnail, // Almacenar la miniatura del video
         };
@@ -78,6 +78,8 @@ const Formulario = ({ setVideoData }) => {
 
         // Guardar la lista completa de videos en el localStorage
         localStorage.setItem("videos", JSON.stringify(storedVideos));
+
+        console.log("Videos guardados en localStorage:", storedVideos);
 
         // Actualizar el estado local si es necesario
         setVideoData(videoData);

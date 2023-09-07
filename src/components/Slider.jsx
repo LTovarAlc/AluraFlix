@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./slider/Slider.css";
 import "./content/Content.css";
 
-const CategorySlider = ({ videos, onDelete, videoData }) => {
+const CategorySlider = ({ videos, onDelete }) => {
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -20,21 +20,21 @@ const CategorySlider = ({ videos, onDelete, videoData }) => {
     <div className="category-slider">
       <Slider {...sliderSettings}>
         {videos.map((video) => (
-          <Link to={"/VideoPlay"} key={video.id}>
+          <Link to={`/VideoPlay/${video.VideoUrl}`} key={video.id}>
             <div className="video__card">
               <img
                 src="/img/borrar.png"
                 alt="Delete"
                 className="delete"
                 onClick={(e) => {
-                  e.preventDefault(); // Evitar que el enlace se active
-                  onDelete(video.id); // Llamar a la función onDelete para eliminar la tarjeta
+                  e.preventDefault();
+                  onDelete(video.id);
                 }}
               />
               <div className="video-info">
                 <img
-                  src={video.Miniatura} // Miniatura del video
-                  alt={video.Titulo} // Titulo como alt
+                  src={video.Miniatura}
+                  alt={video.Titulo}
                   className="miniatura"
                 />
                 <h3 className="title__video">{video.Titulo}</h3>

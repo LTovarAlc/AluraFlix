@@ -1,16 +1,25 @@
+import React from "react";
+import ReactPlayer from "react-player";
 import "./ContentVP.css";
 
-const ContentVP = () => {
+const ContentVP = ({ selectedVideo }) => {
   return (
     <section className="contentVP">
       <div className="video__comments">
-        <div className="video__container"></div>
+        <div className="video__container">
+          <ReactPlayer
+            url={selectedVideo.VideoUrl}
+            controls
+            width="100%"
+            height="100%"
+          />
+        </div>
         <div className="comments__container"></div>
       </div>
       <div className="information__video">
-        <h1 className="titleVP">*TITULO DEL VIDEO*</h1>
+        {selectedVideo && <h1 className="titleVP">{selectedVideo.Titulo}</h1>}
         <button className="like">
-            <img src="./img/favorito.png" alt="Like" className="like__icon" />
+          <img src="./img/favorito.png" alt="Like" className="like__icon" />
         </button>
       </div>
     </section>
