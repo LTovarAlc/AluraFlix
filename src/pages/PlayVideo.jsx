@@ -4,8 +4,8 @@ import HeaderVP from "../components/Header/HeaderVP";
 import ContentVP from "../components/ContentVP/ContentVP";
 
 const PlayVideo = ({ videoData }) => {
-  const { videoUrl } = useParams();
-  const selectedVideo = videoData.find((video) => video.VideoUrl === videoUrl);
+  const { id } = useParams();
+  const selectedVideo = videoData.find((video) => video.id === id);
 
   return (
     <>

@@ -24,7 +24,7 @@ function App() {
           element={<FormPage setVideoData={handleAddVideo} />}
         />
         <Route
-          path="/VideoPlay/:videoUrl"
+          path="/VideoPlay/:id"
           element={<PlayVideo videoData={videoData} />}
         />
       </Routes>
