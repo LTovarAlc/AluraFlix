@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import "./Formulario.css";
 import categorias from "../categorias";
 import { v4 as uuidv4 } from "uuid";
-import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Formulario = ({ setVideoData }) => {
-  const navigate = useNavigate();
   const [titulo, setTitulo] = useState("");
   const [urlVideo, setUrlVideo] = useState("");
   const [categorySelected, setCategorySelected] = useState("");
@@ -46,7 +44,7 @@ const Formulario = ({ setVideoData }) => {
       try {
         // Extraer el ID del video de YouTube desde la URL
         const videoId = urlVideo.match(/v=([^&]+)/)[1];
-        console.log("video ID", videoId)
+        console.log("video ID", videoId);
 
         // Realizar una solicitud a la API de YouTube para obtener la miniatura
         const response = await axios.get(
@@ -54,7 +52,8 @@ const Formulario = ({ setVideoData }) => {
         );
         console.log("API Response:", response);
 
-        const videoThumbnail = response.data.items[0].snippet.thumbnails.medium.url;
+        const videoThumbnail =
+          response.data.items[0].snippet.thumbnails.medium.url;
         console.log("Video Thumbnail:", videoThumbnail);
 
         // Generar un id
@@ -68,25 +67,15 @@ const Formulario = ({ setVideoData }) => {
           Miniatura: videoThumbnail, // Almacenar la miniatura del video
         };
 
-        console.log(videoData)
+        console.log(videoData);
 
-        // Recuperar la lista actual de videos del localStorage o crear una lista vacía si no existe
-        const storedVideos = JSON.parse(localStorage.getItem("videos")) || [];
+        // Realizar una solicitud POST al servidor JSON para agregar el nuevo video
+        await axios.post("http://localhost:5000/videos", videoData);
 
-        // Agregar el nuevo video a la lista
-        storedVideos.push(videoData);
-
-        // Guardar la lista completa de videos en el localStorage
-        localStorage.setItem("videos", JSON.stringify(storedVideos));
-
-        console.log("Videos guardados en localStorage:", storedVideos);
-
-        // Actualizar el estado local si es necesario
-        setVideoData(videoData);
+        // Actualizar el estado local con los nuevos datos
+        setVideoData((prevData) => [...prevData, videoData]);
 
         setFormularioEnviado(true);
-
-        navigate("/");
       } catch (error) {
         console.error("Error al obtener datos de YouTube: ", error);
       }
