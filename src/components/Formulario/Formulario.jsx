@@ -3,6 +3,7 @@ import "./Formulario.css";
 import categorias from "../categorias";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Importa useNavigate
 
 const Formulario = ({ setVideoData }) => {
   const [titulo, setTitulo] = useState("");
@@ -12,6 +13,8 @@ const Formulario = ({ setVideoData }) => {
   const [urlError, setUrlError] = useState("");
   const [categoriaError, setCategoriaError] = useState("");
   const [formularioEnviado, setFormularioEnviado] = useState(false);
+  
+  const navigate = useNavigate(); // Inicializa useNavigate
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -64,7 +67,7 @@ const Formulario = ({ setVideoData }) => {
           Titulo: titulo,
           VideoUrl: urlVideo,
           Categoria: categorySelected,
-          Miniatura: videoThumbnail, // Almacenar la miniatura del video
+          Miniatura: videoThumbnail,
         };
 
         console.log(videoData);
@@ -76,6 +79,11 @@ const Formulario = ({ setVideoData }) => {
         setVideoData((prevData) => [...prevData, videoData]);
 
         setFormularioEnviado(true);
+
+        // Redirigir al usuario a la página de inicio después de 2 segundos
+        setTimeout(() => {
+          navigate("/");
+        }, 2000); // Cambia el valor de 2000 según tus necesidades
       } catch (error) {
         console.error("Error al obtener datos de YouTube: ", error);
       }

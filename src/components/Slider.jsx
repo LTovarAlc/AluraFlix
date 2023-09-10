@@ -20,7 +20,7 @@ const CategorySlider = ({ videos, onDelete }) => {
     <div className="category-slider">
       <Slider {...sliderSettings}>
         {videos.map((video) => (
-          <Link to={`/VideoPlay/${video.VideoUrl}`} key={video.id}>
+          <Link to={`/VideoPlay/${video.id}`} key={video.id}>
             <div className="video__card">
               <img
                 src="/img/borrar.png"

@@ -3,9 +3,12 @@ import { useParams } from "react-router-dom";
 import HeaderVP from "../components/Header/HeaderVP";
 import ContentVP from "../components/ContentVP/ContentVP";
 
-const PlayVideo = ({ videoData }) => {
-  const { videoUrl } = useParams();
-  const selectedVideo = videoData.find((video) => video.VideoUrl === videoUrl);
+const PlayVideo = ({videoData}) => {
+  const { id } = useParams();
+  const selectedVideo = videoData.find((video) => video.id === id);
+  console.log("Selected Video:", selectedVideo);
+
+  // console.log("VideoData", videoData)
 
   return (
     <>
@@ -19,4 +22,4 @@ const PlayVideo = ({ videoData }) => {
   );
 };
 
-export default PlayVideo;
+export default PlayVideo
