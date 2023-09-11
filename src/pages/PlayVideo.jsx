@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import HeaderVP from "../components/Header/HeaderVP";
 import ContentVP from "../components/ContentVP/ContentVP";
+import axios from "axios"; // Importa axios
 
-const PlayVideo = ({videoData}) => {
+const PlayVideo = () => {
   const { id } = useParams();
-  const selectedVideo = videoData.find((video) => video.id === id);
-  console.log("Selected Video:", selectedVideo);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
-  // console.log("VideoData", videoData)
+  useEffect(() => {
+    // Realiza una solicitud GET al servidor para obtener los datos del video por ID
+    axios
+      .get(`http://localhost:5000/videos/${id}`)
+      .then((response) => {
+        // Almacena los datos del video en el estado local
+        setSelectedVideo(response.data);
+      })
+      .catch((error) => {
+        console.error("Error al obtener el video: ", error);
+      });
+  }, [id]);
 
   return (
     <>
@@ -22,4 +33,4 @@ const PlayVideo = ({videoData}) => {
   );
 };
 
-export default PlayVideo
+export default PlayVideo;
