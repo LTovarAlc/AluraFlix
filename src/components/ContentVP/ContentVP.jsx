@@ -7,12 +7,20 @@ const ContentVP = ({ selectedVideo }) => {
     return <p>Video no encontrado</p>;
   }
 
+  const playerOptions = {
+    width: "100%",
+    height: "500px",
+  };
+
   return (
     <section className="contentVP">
       <div className="video__comments">
         <div className="video__container">
           {selectedVideo.VideoUrl && (
-            <YouTube videoId={selectedVideo.VideoUrl.split("v=")[1]} />
+            <YouTube
+              videoId={selectedVideo.VideoUrl.split("v=")[1]}
+              opts={playerOptions}
+            />
           )}
         </div>
         <div className="comments__container"></div>

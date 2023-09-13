@@ -14,7 +14,7 @@ const Formulario = ({ setVideoData }) => {
   const [categoriaError, setCategoriaError] = useState("");
   const [formularioEnviado, setFormularioEnviado] = useState(false);
   
-  const navigate = useNavigate(); // Inicializa useNavigate
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -70,7 +70,7 @@ const Formulario = ({ setVideoData }) => {
           Miniatura: videoThumbnail,
         };
 
-        console.log(videoData);
+        console.log("VideoData: ", videoData);
 
         // Realizar una solicitud POST al servidor JSON para agregar el nuevo video
         await axios.post("http://localhost:5000/videos", videoData);
@@ -82,7 +82,7 @@ const Formulario = ({ setVideoData }) => {
 
         // Redirigir al usuario a la página de inicio después de 2 segundos
         setTimeout(() => {
-          navigate("/");
+          // navigate("/");
         }, 2000); // Cambia el valor de 2000 según tus necesidades
       } catch (error) {
         console.error("Error al obtener datos de YouTube: ", error);

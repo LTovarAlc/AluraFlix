@@ -12,7 +12,6 @@ const Home = () => {
     axios.get("http://localhost:5000/videos")
       .then((response) => {
         // Almacena los datos de los videos en el estado local
-        console.log("VideoData en Home: ", response.data)
         setVideoData(response.data);
       })
       .catch((error) => {

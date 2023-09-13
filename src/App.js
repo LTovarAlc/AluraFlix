@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import FormPage from "./pages/FormPage";
 import PlayVideo from "./pages/PlayVideo";
 import Footer from "./components/Footer/Footer";
+import axios from "axios"; // Importa Axios
 
 const App = () => {
   const [videoData, setVideoData] = useState([]);
@@ -17,9 +18,17 @@ const App = () => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+    // Realiza una solicitud GET al servidor para obtener los datos de los videos
+    axios
+      .get("http://localhost:5000/videos")
+      .then((response) => {
+        // Almacena los datos de los videos en el estado local
+        setVideoData(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error al obtener la lista de videos: ", error);
+      });
   }, []);
 
   return (
@@ -36,7 +45,7 @@ const App = () => {
             isLoading ? (
               <p>Cargando...</p>
             ) : (
-              <PlayVideo videoData={videoData} setVideoData={setVideoData} />
+              <PlayVideo videoData={videoData} />
             )
           }
         />

@@ -13,6 +13,7 @@
     height: 500px;
     width: 70%;
     border-radius: 12px;
+    overflow: hidden;
 }
 
 .comments__container{
@@ -60,4 +61,8 @@
 .like__icon{
     height: 30px;
     width: auto;
+}
+
+.titleVP{
+    color: aliceblue;
 }

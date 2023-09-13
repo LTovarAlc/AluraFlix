@@ -1,18 +1,53 @@
 {
   "videos": [
     {
-      "id": "d1a1b472-2daa-4643-b737-318711e4e789",
-      "Titulo": "Primer codigo con Python",
-      "VideoUrl": "https://www.youtube.com/watch?v=Osd9KOu4b7s",
-      "Categoria": "Educación",
-      "Miniatura": "https://i.ytimg.com/vi/Osd9KOu4b7s/mqdefault.jpg"
+      "id": "940a9eef-64e4-4d52-a0d8-8ec110460ca4",
+      "Titulo": "Aerobico Remix",
+      "VideoUrl": "https://www.youtube.com/watch?v=iOf-54vjDx0",
+      "Categoria": "Música",
+      "Miniatura": "https://i.ytimg.com/vi/iOf-54vjDx0/mqdefault.jpg"
     },
     {
-      "id": "65933309-f3c5-42f7-927f-676fe0ccf78c",
-      "Titulo": "Menu desplegable",
-      "VideoUrl": "https://www.youtube.com/watch?v=4-kdBLUpcJk",
-      "Categoria": "Educación",
-      "Miniatura": "https://i.ytimg.com/vi/4-kdBLUpcJk/mqdefault.jpg"
+      "id": "59eb4634-522a-4170-80dc-ce036a303094",
+      "Titulo": "SunFlower",
+      "VideoUrl": "https://www.youtube.com/watch?v=ApXoWvfEYVU",
+      "Categoria": "Música",
+      "Miniatura": "https://i.ytimg.com/vi/ApXoWvfEYVU/mqdefault.jpg"
+    },
+    {
+      "id": "8aab212a-8a19-4759-9e62-06254104a456",
+      "Titulo": "Ella es una G",
+      "VideoUrl": "https://www.youtube.com/watch?v=erC4wgk-QT8",
+      "Categoria": "Música",
+      "Miniatura": "https://i.ytimg.com/vi/erC4wgk-QT8/mqdefault.jpg"
+    },
+    {
+      "id": "265ebadc-2caf-4c52-8100-1cfe512a6ad9",
+      "Titulo": "Slow dancing in the dark",
+      "VideoUrl": "https://www.youtube.com/watch?v=K3Qzzggn--s",
+      "Categoria": "Música",
+      "Miniatura": "https://i.ytimg.com/vi/K3Qzzggn--s/mqdefault.jpg"
+    },
+    {
+      "id": "dd329d31-a31f-4d7b-99a0-d5c9a706e3b7",
+      "Titulo": "Encontrandote",
+      "VideoUrl": "https://www.youtube.com/watch?v=E17m1uUriUU",
+      "Categoria": "Música",
+      "Miniatura": "https://i.ytimg.com/vi/E17m1uUriUU/mqdefault.jpg"
+    },
+    {
+      "id": "4290b72e-3f1a-41fb-aac9-480d68fa2fb0",
+      "Titulo": "She don´t give a FO",
+      "VideoUrl": "https://www.youtube.com/watch?v=W0yp3rSfx3I",
+      "Categoria": "Música",
+      "Miniatura": "https://i.ytimg.com/vi/W0yp3rSfx3I/mqdefault.jpg"
+    },
+    {
+      "id": "f32a02b4-c8d2-47c9-a426-11ff5fe530e2",
+      "Titulo": "Calling",
+      "VideoUrl": "https://www.youtube.com/watch?v=LBkenYxCBOs",
+      "Categoria": "Música",
+      "Miniatura": "https://i.ytimg.com/vi/LBkenYxCBOs/mqdefault.jpg"
     }
   ]
 }
