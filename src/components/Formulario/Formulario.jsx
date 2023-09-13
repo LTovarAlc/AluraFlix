@@ -82,7 +82,7 @@ const Formulario = ({ setVideoData }) => {
 
         // Redirigir al usuario a la página de inicio después de 2 segundos
         setTimeout(() => {
-          // navigate("/");
+        navigate("/");
         }, 2000); // Cambia el valor de 2000 según tus necesidades
       } catch (error) {
         console.error("Error al obtener datos de YouTube: ", error);
