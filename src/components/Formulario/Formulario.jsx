@@ -3,7 +3,7 @@ import "./Formulario.css";
 import categorias from "../categorias";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Importa useNavigate
+import { useNavigate } from "react-router-dom";
 
 const Formulario = ({ setVideoData }) => {
   const [titulo, setTitulo] = useState("");
@@ -12,7 +12,7 @@ const Formulario = ({ setVideoData }) => {
   const [tituloError, setTituloError] = useState("");
   const [urlError, setUrlError] = useState("");
   const [categoriaError, setCategoriaError] = useState("");
-  const [formularioEnviado, setFormularioEnviado] = useState(false);
+  const [FormularioEnviado, setFormularioEnviado] = useState("");
   
   const navigate = useNavigate();
 
@@ -72,18 +72,16 @@ const Formulario = ({ setVideoData }) => {
 
         console.log("VideoData: ", videoData);
 
-        // Realizar una solicitud POST al servidor JSON para agregar el nuevo video
+
         await axios.post("http://localhost:5000/videos", videoData);
 
-        // Actualizar el estado local con los nuevos datos
         setVideoData((prevData) => [...prevData, videoData]);
 
         setFormularioEnviado(true);
 
-        // Redirigir al usuario a la página de inicio después de 2 segundos
         setTimeout(() => {
         navigate("/");
-        }, 2000); // Cambia el valor de 2000 según tus necesidades
+        }, 2000);
       } catch (error) {
         console.error("Error al obtener datos de YouTube: ", error);
       }
