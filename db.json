@@ -251,6 +251,13 @@
       "VideoUrl": "https://www.youtube.com/watch?v=G0WFE2TLfaE&pp=ygUGY29jaW5h",
       "Categoria": "Cocina",
       "Miniatura": "https://i.ytimg.com/vi/G0WFE2TLfaE/mqdefault.jpg"
+    },
+    {
+      "id": "ee39d5c8-8ffa-4368-ac09-3280eb02da1e",
+      "Titulo": "TailWind css avanzado",
+      "VideoUrl": "https://www.youtube.com/watch?v=-sf8kPtyZQc",
+      "Categoria": "Educación",
+      "Miniatura": "https://i.ytimg.com/vi/-sf8kPtyZQc/mqdefault.jpg"
     }
   ]
 }

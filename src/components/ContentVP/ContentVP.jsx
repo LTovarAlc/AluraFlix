@@ -3,16 +3,16 @@ import YouTube from "react-youtube";
 import "./ContentVP.css";
 
 const ContentVP = ({ selectedVideo }) => {
-  const [comment, setComment] = useState(""); // Estado para el valor del comentario
-  const [commentsList, setCommentsList] = useState([]); // Estado para la lista de comentarios
+  const [comment, setComment] = useState("");
+  const [commentsList, setCommentsList] = useState([]);
+  const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
-    // Recuperar comentarios almacenados en localStorage al cargar el componente
     const storedComments = localStorage.getItem("comments");
     if (storedComments) {
       setCommentsList(JSON.parse(storedComments));
     }
-  }, []); // [] para que solo se ejecute al cargar el componente
+  }, []);
 
   if (!selectedVideo) {
     return <p>Video no encontrado</p>;
@@ -31,7 +31,7 @@ const ContentVP = ({ selectedVideo }) => {
     if (comment.trim() !== "") {
       const updatedComments = [...commentsList, comment];
       setCommentsList(updatedComments);
-      setComment(""); // Limpia el input después de agregar un comentario
+      setComment("");
       localStorage.setItem("comments", JSON.stringify(updatedComments));
     }
   };
@@ -77,8 +77,12 @@ const ContentVP = ({ selectedVideo }) => {
         {selectedVideo.Titulo && (
           <h1 className="titleVP">{selectedVideo.Titulo}</h1>
         )}
-        <button className="like">
-          <img src="./img/favorito.png" alt="Like" className="like__icon" />
+        <button className="like" onClick={() => setIsLiked(!isLiked)}>
+          <img
+            src={isLiked ? "/img/favoritoRojo.png" : "/img/favorito.png"}
+            alt="Like"
+            className="like__icon"
+          />
         </button>
       </div>
     </section>
