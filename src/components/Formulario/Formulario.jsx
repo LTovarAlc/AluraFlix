@@ -46,17 +46,14 @@ const Formulario = ({ setVideoData }) => {
       try {
         // Extraer el ID del video de YouTube desde la URL
         const videoId = urlVideo.match(/v=([^&]+)/)[1];
-        console.log("video ID", videoId);
 
         // Realizar una solicitud a la API de YouTube para obtener la miniatura
         const response = await axios.get(
           `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyCQ4mACoTHcMp3kGgxniRq7eEA9CL5JSJM&part=snippet&id=${videoId}`
         );
-        console.log("API Response:", response);
 
         const videoThumbnail =
           response.data.items[0].snippet.thumbnails.medium.url;
-        console.log("Video Thumbnail:", videoThumbnail);
 
         // Generar un id
         const id = uuidv4();
@@ -71,7 +68,7 @@ const Formulario = ({ setVideoData }) => {
 
         console.log("VideoData: ", videoData);
 
-        await axios.post("http://localhost:5000/videos", videoData);
+        await axios.post("https://fake-api-alura-flix.vercel.app/videos", videoData);
 
         setVideoData((prevData) => [...prevData, videoData]);
 

@@ -20,7 +20,7 @@ const App = () => {
   useEffect(() => {
     // Realiza una solicitud GET al servidor para obtener los datos de los videos
     axios
-      .get("http://localhost:5000/videos")
+      .get("https://fake-api-alura-flix.vercel.app/videos")
       .then((response) => {
         // Almacena los datos de los videos en el estado local
         setVideoData(response.data);

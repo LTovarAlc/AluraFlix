@@ -11,7 +11,7 @@ const PlayVideo = () => {
   useEffect(() => {
     // Realiza una solicitud GET al servidor para obtener el video por su ID
     axios
-      .get(`http://localhost:5000/videos/${id}`)
+      .get(`https://fake-api-alura-flix.vercel.app/videos/${id}`)
       .then((response) => {
         // Almacena el video correspondiente en el estado local
         setSelectedVideo(response.data);

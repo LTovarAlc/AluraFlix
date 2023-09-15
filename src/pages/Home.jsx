@@ -9,7 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     // Realiza una solicitud GET al servidor JSON para obtener la lista de videos
-    axios.get("http://localhost:5000/videos")
+    axios.get("https://fake-api-alura-flix.vercel.app/videos")
       .then((response) => {
         // Almacena los datos de los videos en el estado local
         setVideoData(response.data);
@@ -21,7 +21,7 @@ const Home = () => {
 
   const handleDelete = (videoId) => {
     // Realiza una solicitud DELETE al servidor JSON para eliminar un video
-    axios.delete(`http://localhost:5000/videos/${videoId}`)
+    axios.delete(`https://fake-api-alura-flix.vercel.app/videos/${videoId}`)
       .then(() => {
         // Actualiza el estado local para reflejar la eliminación del video
         setVideoData(videoData.filter((video) => video.id !== videoId));
