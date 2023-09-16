@@ -3,3 +3,24 @@
     margin-right: 30px;
     max-height: 100px;
 }
+
+.slick-arrow, .slick-prev{
+    margin: 0px -20px;
+}
+
+/* tablets */
+@media (min-width: 820px) and (max-width: 1180px){
+    .slick-slide{
+        margin-top: 30px;
+        margin-right: 30px;
+        max-height: 75px;
+    }
+}
+
+/* mobile */
+@media (min-width: 390px) and (max-width: 844px){
+    .slick-slide{
+        margin-top: 30px;
+        max-height: 80px;
+    }
+}

@@ -16,3 +16,12 @@
     background-color: #94ff29;
     box-shadow: 0px 10px 15px #487c13b3;
 }
+
+/* mobile */
+@media (min-width: 390px) and (max-width: 819px){
+    .btn{
+        height: 40px;
+        font-size: 14px;
+        width: 100px;
+    }
+}

@@ -26,3 +26,10 @@
 .iconsRedes{
     height: 40px;
 }
+
+@media (min-width: 390px) and (max-width: 844px){
+    .nombre{
+        font-size: 30px;
+        text-align: center;
+    }
+}

@@ -93,3 +93,21 @@
 .delete:hover {
   filter: brightness(1.5);
 }
+
+/* mobile */
+@media (min-width: 390px) and (max-width: 844px){
+  .content__slogan{
+    font-size: 34px;
+    width: 80%;
+  }
+
+  .content__title{
+    padding: 32px 0px;
+  }
+
+  .category__name{
+    font-size: 24px;
+    width: 60%;
+  }
+}
+

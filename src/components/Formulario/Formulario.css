@@ -97,3 +97,40 @@ select:focus {
   font-size: 14px;
   padding: 8px 0px;
 }
+
+/* tablets */
+@media (min-width: 820px) and (max-width: 1180px){
+  .form__title{
+    font-size: 36px;
+    width: 350px;
+  }
+
+  .form input,
+  select{
+    width: 300px;
+  }
+
+  .section__form{
+    height: 68vh;
+  }
+  
+  .form__container{
+    height: 500px;
+  }
+}
+
+@media (min-width: 390px) and (max-width: 819px){
+  .form__title{
+    font-size: 22px;
+    width: 200px;
+  }
+
+  .form__container{
+    width: 90%;
+  }
+
+  .form input,
+  select{
+    width: 250px;
+  }
+}

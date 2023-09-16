@@ -5,3 +5,10 @@
     padding: 40px 100px;
     background-color: #292929;
 }
+
+@media (min-width: 390px) and (max-width: 819px){
+    .headerVP{
+        display: flex;
+        flex-direction: column;
+    }
+}

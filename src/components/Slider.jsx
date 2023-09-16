@@ -1,19 +1,28 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-
+import { useMediaQuery } from "react-responsive";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./slider/Slider.css";
 import "./content/Content.css";
 
 const CategorySlider = ({ videos, onDelete }) => {
+
+  const isTablet = useMediaQuery({
+    query: "(min-width: 820px) and (max-width: 1180px)",
+  });
+
+  const isSmallScreen = useMediaQuery({
+    query: "(min-width: 390px) and (max-width: 819px)",
+  });
+
   const sliderSettings = {
     dots: true,
     infinite: true,
     speed: 800,
-    slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToShow: isSmallScreen ? 1 : (isTablet ? 3 : 4),
+    slidesToScroll: isSmallScreen ? 1 : (isTablet ? 3 : 4),
   };
 
   return (
